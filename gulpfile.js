@@ -143,7 +143,7 @@ gulp.task("ipfs",["clean"], function() {
 gulp.task("publish", function() {
   return gulp.src('dist/**/*')
     .pipe($.ghPages({
-      remoteUrl: 'https://$GH_TOKEN@github.com/mkg20001/mkg20001.github.io.git',
+      remoteUrl: 'https://github.com/mkg20001/mkg20001.github.io.git',
       silent: true,
       branch: 'master',
       force:true
