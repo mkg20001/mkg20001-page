@@ -2,6 +2,8 @@ build:
 	if ! [ -d node_modules ]; then npm i; fi
 	npm run build
 publish: build
+	git config --global user.name "mkg20001"
+	git config --global user.email "mkg20001@gmail.com"
 	npm run publish
 ipfs:
 	npm run ipfs-build
