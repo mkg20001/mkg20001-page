@@ -35,17 +35,6 @@ page("/",function() {
   showPage("home");
 });
 
-addRoute("Kontakt","contact");
-addRoute("Impressum","about");
-
-/*page("/Kontakt",function() {
-  showPage("contact");
-});
-
-page("/Impressum",function() {
-  showPage("about");
-});*/
-
 page("*",function() {
   showPage("404");
 });

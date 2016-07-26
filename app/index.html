@@ -29,12 +29,12 @@
     <li><a href="<%= u %>"><%= p %></a></li>
   <% }; %>
   !-->
-    <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
+    <div class="mkg20001 mdl-layout mdl-js-layout has-drawer is-upgraded">
       <main class="mdl-layout__content">
         <!-- inner -->
-        <div class="demo-blog__posts mdl-grid">
-          <div class="mdl-card coffee-pic mdl-cell mdl-cell--8-col">
-            <div class="mdl-card__media mdl-color-text--grey-50">
+        <div class="mkg20001__posts mdl-grid">
+          <div class="mdl-card mdl-cell mdl-cell--8-col">
+            <div class="mdl-card__media placeholder mdl-color-text--grey-50">
               <h3><a href="https://github.com/mkg20001">Maciej Krüger</a></h3>
             </div>
             <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
@@ -66,7 +66,7 @@
             </div>
           </div>!-->
           <div class="mdl-card mdl-cell mdl-cell--12-col">
-            <div style="background-image:url('images/banner.jpg');" class="mdl-card__media mdl-color-text--grey-50">
+            <div class="placeholder2 mdl-card__media mdl-color-text--grey-50">
               <h3>About Me</h3>
             </div>
             <div class="mdl-card__supporting-text mdl-color-text--grey-600">
@@ -156,7 +156,7 @@
             </div>
           </div>!-->
           <div class="mdl-card mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
-            <div style="background-image:url('images/banner.jpg');" class="mdl-card__media mdl-color-text--grey-50">
+            <div class="placeholder mdl-card__media mdl-color-text--grey-50">
               <h3><a href="https://launchpad.net/small-cleanup-script">small-cleanup-script</a></h3>
             </div>
             <div class="mdl-card__supporting-text mdl-color-text--grey-600">
@@ -173,7 +173,7 @@
             </div>
           </div>
           <div class="mdl-card mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
-            <div style="background-image:url('images/banner.jpg');" class="mdl-card__media mdl-color-text--grey-50">
+            <div class="placeholder2 mdl-card__media mdl-color-text--grey-50">
               <h3><a href="https://github.com/mkg20001/fontawesome-to-iron-iconset">fontawesome-to-iron-iconset</a></h3>
             </div>
             <div class="mdl-card__supporting-text mdl-color-text--grey-600">
@@ -189,7 +189,7 @@
             </div>
           </div>
           <div class="mdl-card mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop">
-            <div style="background-image:url('images/banner.jpg');" class="mdl-card__media mdl-color-text--grey-50">
+            <div class="placeholder mdl-card__media mdl-color-text--grey-50">
               <h3><a href="https://github.com/mkg20001/mkg20001-page">mkg20001-github-io</a></h3>
             </div>
             <div class="mdl-card__supporting-text mdl-color-text--grey-600">
@@ -244,23 +244,9 @@
       <div class="mdl-layout__obfuscator"></div>
     </div>
     <script src="mdl.js" async></script>
+    <script src="app.js" async></script>
     <link rel="stylesheet" href="mdl.css" async>
   </body>
-  <script>
-    Array.prototype.forEach.call(document.querySelectorAll('.mdl-card__media'), function(el) {
-      var link = el.querySelector('a');
-      if(!link) {
-        return;
-      }
-      var target = link.getAttribute('href');
-      if(!target) {
-        return;
-      }
-      el.addEventListener('click', function() {
-        location.href = target;
-      });
-    });
-  </script>
 </html>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=de" async>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" async>

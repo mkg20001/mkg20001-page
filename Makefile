@@ -1,13 +1,18 @@
 build:
 	if ! [ -d node_modules ]; then npm i; fi
 	npm run build
-publish: build
+gh-pages: build
+	mv IPFS-HASH dist
+	mv IPFS-URL dist
 	git config --global user.name "mkg20001"
 	git config --global user.email "mkg20001@gmail.com"
 	npm run publish
 ipfs:
 	npm run ipfs-build
 	ipfs add -r dist
+ipfs-publish: ipfs
+	bash scripts/ipfs-publish.sh
+publish: ipfs-publish gh-pages
 clean:
 	rm -rf dist .tmp .tmpdist .tmpbuild release
 distclean: clean
@@ -15,7 +20,7 @@ distclean: clean
 watch:
 	nodemon /usr/bin/npm run serve --ext js,html,css -i dist -i .tmpbuild -i .tmp
 update: crop
-	cd getmdl;bash update.sh
+	cd scripts;bash update.sh
 	bower install visionmedia/page.js jquery #fontawesome
 	#rm -rf app/fonts;mkdir -p app/fonts
 	cp bower_components/page/page.js app/page.js
@@ -28,7 +33,7 @@ update: crop
 	convert app/images/logo.jpg -resize 120x120 app/images/ios-desktop.png
 	convert app/images/logo.jpg -resize 144x144 app/images/ms-touch-icon-144x144-precomposed.png
 crop:
-	bash croper.sh
+	cd scripts;bash croper.sh
 release:
 	rm -rf release
 	mkdir -p release
