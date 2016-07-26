@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://mkg20001.github.io/</loc>
+    <image:image>
+       <image:loc>https://mkg20001.github.io/images/logo.png</image:loc>
+       <image:caption>mkg20001 Logo</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>https://mkg20001.github.io/images/OS-Loader.png</image:loc>
+       <image:caption>OS Loader Screeenshot</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>https://mkg20001.github.io/images/banner.jpg</image:loc>
+       <image:caption>mkg20001 Banner</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>https://mkg20001.github.io/images/big.banner.jpg</image:loc>
+       <image:caption>mkg20001 Banner</image:caption>
+    </image:image>
+    <image:image>
+       <image:loc>https://mkg20001.github.io/images/tree.jpg</image:loc>
+       <image:caption>A Tree</image:caption>
+    </image:image>
+  </url>
+</urlset>

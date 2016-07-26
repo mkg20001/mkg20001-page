@@ -129,9 +129,13 @@ gulp.task("copy",function() {
   return gulp.src("app/**/*").pipe(gulp.dest(DIST));
 });
 
+gulp.task("basics",function() {
+  return gulp.src(["robots.txt","sitemap.xml"]).pipe(gulp.dest("dist"));
+});
+
 gulp.task("default",["clean"], function() {
   if (!global.ipfs) global.ipfs=false;
-  return runSequence(["copy","styles"],["build","favicon"],image64?["merge"]:["merge","mergecopy"]);
+  return runSequence(["copy","styles"],["build","favicon"],image64?["merge"]:["merge","mergecopy","basics"]);
 });
 
 gulp.task("ipfs",["clean"], function() {
