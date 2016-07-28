@@ -23,6 +23,7 @@ function get(theUrl, callback)
 }
 function openInIPFS() {
   get("./IPFS-URL",function(url) {
-    if (url.startsWith("http://ipfs.io")) window.location.href=url; else console.error("Not a valid IPFS URL starts with "+url.substr(0,10));
+    if (url.startsWith("https://ipfs.io")) window.location.href=url; else console.error("Not a valid IPFS URL starts with "+url.substr(0,10));
   });
 }
+window.ipfs=openInIPFS();
