@@ -26,4 +26,4 @@ function openInIPFS() {
     if (url.startsWith("https://ipfs.io")) window.location.href=url; else console.error("Not a valid IPFS URL starts with "+url.substr(0,10));
   });
 }
-window.ipfs=openInIPFS();
+window.IPFS=openInIPFS;
