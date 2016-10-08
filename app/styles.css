@@ -1,3 +1,9 @@
+wip::before {
+  content:"(WIP)";
+  font-size:13px;
+  font-weight: bold;
+}
+
 body::before {
     background-size: cover;
     background-attachment: fixed;
