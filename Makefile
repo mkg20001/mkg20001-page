@@ -9,6 +9,8 @@ gh-pages: build
 	npm run publish
 zeronet:
 	npm run ipfs-build
+	cp IPFS-HASH dist
+	cp IPFS-URL dist
 	sudo rm -rf $(HOME)/ZeroNet/1MBFot8DT9hBbjULhMay9t2oHZq1bwzuvT/web
 	sudo mkdir $(HOME)/ZeroNet/1MBFot8DT9hBbjULhMay9t2oHZq1bwzuvT/web
 	sudo cp -r -v ./dist/* $(HOME)/ZeroNet/1MBFot8DT9hBbjULhMay9t2oHZq1bwzuvT/web
@@ -19,7 +21,7 @@ ipfs:
 	ipfs add -r dist
 ipfs-publish: ipfs
 	bash scripts/ipfs-publish.sh
-publish: zeronet-publish ipfs-publish gh-pages
+publish: ipfs-publish zeronet-publish gh-pages
 clean:
 	rm -rf dist .tmp .tmpdist .tmpbuild release
 distclean: clean
