@@ -23,5 +23,9 @@
        <image:loc>https://mkg20001.github.io/images/tree.jpg</image:loc>
        <image:caption>A Tree</image:caption>
     </image:image>
+    <image:image>
+       <image:loc>https://mkg20001.github.io/images/stones.jpg</image:loc>
+       <image:caption>Stones</image:caption>
+    </image:image>
   </url>
 </urlset>

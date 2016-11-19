@@ -91,6 +91,8 @@ gulp.task('merge', function() {
             return b64i[dist(u)];
           } else if (!ipfs) {
             return "/"+u;
+          } else {
+            return u;
           }
         }
         if (u.startsWith("/")&&ipfs) return "."+u;//u.substr(1);
@@ -140,7 +142,6 @@ gulp.task("default",["clean"], function() {
 
 gulp.task("ipfs",["clean"], function() {
   global.ipfs=true; //ipfs build
-  image64=true;
   return runSequence(["default"]);
 });
 
