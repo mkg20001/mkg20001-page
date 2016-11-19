@@ -4,3 +4,5 @@ node_modules
 release
 .publish
 *.log
+IPFS-URL
+IPFS-HASH

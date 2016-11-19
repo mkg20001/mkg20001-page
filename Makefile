@@ -2,17 +2,24 @@ build:
 	if ! [ -d node_modules ]; then npm i; fi
 	npm run build
 gh-pages: build
-	mv IPFS-HASH dist
-	mv IPFS-URL dist
+	cp IPFS-HASH dist
+	cp IPFS-URL dist
 	git config --global user.name "mkg20001"
 	git config --global user.email "mkg20001@gmail.com"
 	npm run publish
+zeronet:
+	npm run ipfs-build
+	sudo rm -rf $(HOME)/ZeroNet/1MBFot8DT9hBbjULhMay9t2oHZq1bwzuvT/web
+	sudo mkdir $(HOME)/ZeroNet/1MBFot8DT9hBbjULhMay9t2oHZq1bwzuvT/web
+	sudo cp -r -v ./dist/* $(HOME)/ZeroNet/1MBFot8DT9hBbjULhMay9t2oHZq1bwzuvT/web
+zeronet-publish: zeronet
+	bash ./scripts/zeronet-publish.sh
 ipfs:
 	npm run ipfs-build
 	ipfs add -r dist
 ipfs-publish: ipfs
 	bash scripts/ipfs-publish.sh
-publish: ipfs-publish gh-pages
+publish: zeronet-publish ipfs-publish gh-pages
 clean:
 	rm -rf dist .tmp .tmpdist .tmpbuild release
 distclean: clean
